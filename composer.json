@@ -1,6 +1,6 @@
 {
     "name": "goodben/banking-core",
-    "description": "A lightweight php library to manage a simple core banking ",
+    "description": "A lightweight php library to manage a simple core banking",
     "type": "library",
     "license": "MIT",
     "authors": [
