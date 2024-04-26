@@ -21,9 +21,7 @@ class Proxy
             return $this->subject->$name;
         }
         else
-            throw new \BadMethodCallException(
-                "Undefined method '$getter'"
-            );
+            throw new \BadMethodCallException("Undefined method '$getter'");
     }
 
     public function __set($name, $value) {
