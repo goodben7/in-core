@@ -2,6 +2,11 @@
 
 namespace goodben\banking\Core;
 
+/**
+* Interface HolderProfilInterface.
+* 
+* @author Benjamin KALOMBO MUKENA <bmukena85@gmail.com>
+*/
 interface HolderProfilInterface  
 {
     /**

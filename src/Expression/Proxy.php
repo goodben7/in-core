@@ -4,7 +4,11 @@ namespace goodben\banking\Core\Expression;
 
 use goodben\banking\Core\Operation;
 
-
+/**
+ * Class Proxy.
+ * 
+ * @author Benjamin KALOMBO MUKENA <bmukena85@gmail.com>
+ */
 class Proxy  
 {
 

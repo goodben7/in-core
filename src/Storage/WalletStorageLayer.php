@@ -11,7 +11,11 @@ use goodben\banking\Core\PlatformInterface;
 use goodben\banking\Core\AuthorizationInterface;
 use goodben\banking\Core\Exception\StorageLayerException;
 
-
+/**
+ * Abstract WalletStorageLayer.
+ * 
+ * @author Benjamin KALOMBO MUKENA <bmukena85@gmail.com>
+*/
 abstract class WalletStorageLayer
 {
     use FindByCallResolver;

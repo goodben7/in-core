@@ -4,6 +4,11 @@ namespace goodben\banking\Core\Exception;
 
 use goodben\banking\Core\EntryInterface;
 
+/**
+ * Class EntryException.
+ * 
+ * @author Benjamin KALOMBO MUKENA <bmukena85@gmail.com>
+ */
 class EntryException extends \Exception 
 {
     /** @var EntryInterface|null $operation */

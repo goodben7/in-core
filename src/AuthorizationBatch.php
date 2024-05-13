@@ -4,6 +4,11 @@ namespace goodben\banking\Core;
 
 use goodben\banking\Core\BatchInterface;
 
+/**
+ * Class AuthorizationBatch.
+ * 
+ * @author Benjamin KALOMBO MUKENA <bmukena85@gmail.com>
+*/
 final class AuthorizationBatch  implements BatchInterface
 {
     protected bool $_isDoubleEntry;

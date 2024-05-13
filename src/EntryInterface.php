@@ -2,127 +2,132 @@
 
 namespace goodben\banking\Core;
 
+/**
+* Interface EntryInterface.
+* 
+* @author Benjamin KALOMBO MUKENA <bmukena85@gmail.com>
+*/
 interface EntryInterface
 {
     /**
-     * @return double
-     */
+    * @return double
+    */
     public function getAmount(): string;
     /**
-     * @param double $amount
-     */
+    * @param double $amount
+    */
     public function setAmount(string $amount);
     /**
-     * @return string
-     */
+    * @return string
+    */
     public function getCurrency();
     /**
-     * @param string $currency
-     */
+    * @param string $currency
+    */
     public function setCurrency(string $currency);
     /**
-     * @return string
-     */
+    * @return string
+    */
     public function getType():string;
     /**
-     * @param string $type
-     */
+    * @param string $type
+    */
     public function setType(string $type);
     /**
-     * @return \DateTimeImmutable
-     */
+    * @return \DateTimeImmutable
+    */
     public function getDate(): \DateTimeImmutable;
     /**
-     * @param \DateTimeImmutable $date
-     */
+    * @param \DateTimeImmutable $date
+    */
     public function setDate(\DateTimeImmutable $date);
     /**
-     * @return string
-     */
+    * @return string
+    */
     public function getWalletId():string;
     /**
-     * @param string $id
-     */
+    * @param string $id
+    */
     public function setWalletId(string $id);
 
     /**
-     * @return string
-     */
+    * @return string
+    */
     public function getLabel(): string;
     /**
-     * @param string $label
-     */
+    * @param string $label
+    */
     public function setLabel(string $label);
     /**
-     * @return int
-     */
+    * @return int
+    */
     public function getSerialId(): int;
     /**
-     * @param string $id
-     */
+    * @param string $id
+    */
     public function setSerialId(int $id);
     /**
-     * @return \DateTimeImmutable
-     */
+    * @return \DateTimeImmutable
+    */
     public function getExecutedAt(): ?\DateTimeImmutable;
     /**
-     * @param \DateTimeImmutable $date
-     */
+    * @param \DateTimeImmutable $date
+    */
     public function setExecutedAt(?\DateTimeImmutable $date);
     /**
-     * @return string
-     */
+    * @return string
+    */
     public function getAuthorizationId(): string;
     /**
-     * @param string $authId
-     */
+    * @param string $authId
+    */
     public function setAuthorizationId(string $authId);
     /**
-     * @return double
-     */
+    * @return double
+    */
     public function getBalance(): string;
     /**
-     * @param double $balance
-     */
+    * @param double $balance
+    */
     public function setBalance(string $balance);
     /**
-     * @return string
-     */
+    * @return string
+    */
     public function getPlatformId(): string;
     /**
-     * @param string $pif
-     */
+    * @param string $pif
+    */
     public function setPlatformId(string $pif);
     /**
-     * @return double
-     */
+    * @return double
+    */
     public function getTransactionAmount(): string;
     /**
-     * @param double $amount
-     */
+    * @param double $amount
+    */
     public function setTransactionAmount(string $amount);
     /**
-     * @return string
-     */
+    * @return string
+    */
     public function getTransactionCurrency(): string;
     /**
-     * @param string $currency
-     */
+    * @param string $currency
+    */
     public function setTransactionCurrency(string $currency);
     /**
-     * @return null|string
-     */
+    * @return null|string
+    */
     public function getExchangeRate(): ?string;
     /**
-     * @param string $rate
-     */
+    * @param string $rate
+    */
     public function setExchangeRate(?string $rate);
     /**
-     * @return null|string
-     */
+    * @return null|string
+    */
     public function getAppliedRate():?string;
     /**
-     * @param string $rate
-     */
+    * @param string $rate
+    */
     public function setAppliedRate(string $rate);
 }

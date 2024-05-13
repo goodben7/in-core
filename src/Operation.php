@@ -2,6 +2,11 @@
 
 namespace goodben\banking\Core;
 
+/**
+* Abstract Operation.
+* 
+* @author Benjamin KALOMBO MUKENA <bmukena85@gmail.com>
+*/
 abstract class Operation  
 {
     protected ?string $authorizationId;

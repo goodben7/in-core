@@ -11,7 +11,11 @@ use goodben\banking\Core\Exception\WalletException;
 use goodben\banking\Core\Storage\WalletStorageLayer;
 use Symfony\Component\ExpressionLanguage\ExpressionLanguage;
 
-
+/**
+ * Class AbstractSchemaManager.
+ * 
+ * @author Benjamin KALOMBO MUKENA <bmukena85@gmail.com>
+ */
 abstract class AbstractSchemaManager  
 {
     /**

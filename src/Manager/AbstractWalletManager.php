@@ -16,7 +16,11 @@ use goodben\banking\Core\Storage\WalletStorageLayer;
 use goodben\banking\Core\Exception\StorageLayerException;
 use goodben\banking\Core\Exception\AuthorizationException;
 
-
+/**
+ * Class AbstractWalletManager.
+ * 
+ * @author Benjamin KALOMBO MUKENA <bmukena85@gmail.com>
+*/
 abstract class AbstractWalletManager  
 {
     /** @var WalletStorageLayer $storage  */
@@ -60,7 +64,7 @@ abstract class AbstractWalletManager
      * @return WalletInterface
      * @throws WalletException
      * @throws StorageLayerException
-     **/
+    **/
     public function closeWallet(string $walletId): WalletInterface
     {
         $wallet = $this->storage->getWallet($walletId);
@@ -83,7 +87,7 @@ abstract class AbstractWalletManager
      * @param Operation $r
      * @return AuthorizationInterface
      * @throws AuthorizationException
-     */
+    */
     public function authorize(Operation $r): AuthorizationInterface {
         $auth = $this->storage->findPreviousAuthorization($r->getAuthorizationRequestId(), $r->getOperationCode());
         if (null !== $auth && $auth->getStatus() !== Codes::AUTH_STATUS_PENDING) {
@@ -225,7 +229,7 @@ abstract class AbstractWalletManager
      * @param EntryInterface $op
      * @throws EntryException
      * @return EntryInterface
-     */
+    */
     protected  function execute(EntryInterface $op, WalletInterface $wallet): EntryInterface {
 
         if (!$op->getCurrency()) {
@@ -265,7 +269,7 @@ abstract class AbstractWalletManager
      * @param ProcessingEntry[] $entries
      * @return ProcessingEntry[]
      * @throws EntryException
-     */
+    */
     protected function beforeEntryProcessing(array $entries): array {
         return $entries;
     }
@@ -274,19 +278,19 @@ abstract class AbstractWalletManager
      * @param EntryInterface $op 
      * @param WalletInterface $w
      * @throws EntryException
-     */
+    */
     protected function beforeExecuteOperation(EntryInterface $op, WalletInterface $w) {}
 
     /**
      * @param EntryInterface $op 
-     */
+    */
     protected function afterExecuteOperation(EntryInterface $op) {}
 
     /**
      * @param WalletInterface $wallet 
      * @return WalletInterface
      * @throws WalletException
-     */
+    */
     protected function beforeOpenWallet(WalletInterface $wallet): WalletInterface {
         return $wallet;
     }
@@ -294,7 +298,7 @@ abstract class AbstractWalletManager
     /**
      * @param WalletInterface $wallet 
      * @return WalletInterface
-     */
+    */
     protected function afterOpenWallet(WalletInterface $wallet): WalletInterface {
         return $wallet;
     }
@@ -303,7 +307,7 @@ abstract class AbstractWalletManager
      * @param WalletInterface $wallet 
      * @return WalletInterface
      * @throws WalletException
-     */
+    */
     protected function beforeCloseWallet(WalletInterface $wallet):WalletInterface {
         return $wallet;
     }
@@ -311,7 +315,7 @@ abstract class AbstractWalletManager
     /**
      * @param WalletInterface $wallet 
      * @return WalletInterface
-     */
+    */
     protected function afterCloseWallet(WalletInterface $wallet): WalletInterface {
         return $wallet;
     }
@@ -319,19 +323,19 @@ abstract class AbstractWalletManager
      * generate a new free authorization identifier
      * 
      * @return string
-     */
+    */
     protected abstract function getNextAuthorizationId(): string;
 
     /**
      * @param WalletInterface $wallet
      * @return string
-     */
+    */
     protected abstract function generateWalletIdFor(WalletInterface $wallet): string;
 
     /**
      * @param AuthorizationInterface $auth
      * @return AuthorizationInterface
-     */
+    */
     protected function beforeAuthorizationInit(AuthorizationInterface $auth): AuthorizationInterface {
         return $auth;
     }
@@ -339,24 +343,24 @@ abstract class AbstractWalletManager
     /**
      * @param AuthorizationInterface $auth
      * @return AuthorizationInterface
-     */
+    */
     protected function afterAuthorizationInit(AuthorizationInterface $auth): AuthorizationInterface {
         return $auth;
     }
 
     /**
      * @param AuthorizationInterface $auth
-     */
+    */
     protected function onAuthorizationRefused(AuthorizationInterface $auth) {}
 
     /**
      * @param AuthorizationInterface $auth
-     */
+    */
     protected function onAuthorizationAccepted(AuthorizationInterface $auth) {}
 
     /**
      * @param Operation $r
      * @param AuthorizationInterface $auth
-     */
+    */
     protected function onOperationAuthorized(Operation $r, AuthorizationInterface $auth) {}
 }

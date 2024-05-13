@@ -1,6 +1,12 @@
 <?php
 
 namespace goodben\banking\Core;
+
+/**
+* Class Instruction.
+* 
+* @author Benjamin KALOMBO MUKENA <bmukena85@gmail.com>
+*/
 class Instruction
 {
     const AMOUNT_COMPUTED       = 0b00000001;

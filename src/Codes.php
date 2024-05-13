@@ -2,6 +2,11 @@
 
 namespace goodben\banking\Core;
 
+/**
+* Class Codes.
+* 
+* @author Benjamin KALOMBO MUKENA <bmukena85@gmail.com>
+*/
 class Codes 
 {
     const SYSTEM_VALIDATOR = "SYSTEM";
